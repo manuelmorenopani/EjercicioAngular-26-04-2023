@@ -1,0 +1,31 @@
+<div *ngIf="alumnonuevo.id; then thenBlock else elseBlock">
+</div>
+<ng-template #thenBlock>
+<form [formGroup]="alumnoFormulario" #Formformulario="ngForm" (ngSubmit)="anadir()">
+<label for="marca">Id: </label>
+<input type="number" formControlName="id" ><br>
+<label for="color">DNI </label>
+<input type="number" formControlName="dni"><br>
+<label for="velocidad">NOMBRE: </label>
+<input type="string" formControlName="nombre"><br>
+<label for="platos">DURACION: </label>
+<input type="number" formControlName="horas"><br>
+
+
+<button type="submit" >Enviar</button> </form>
+</ng-template>
+
+<ng-template #elseBlock>
+<form [formGroup]="alumnoFormulario" #Formformulario="ngForm" (ngSubmit)="alta()">
+<label for="marca">Id: </label>
+<input type="number" formControlName="id"><br>
+<label for="color">DNI </label>
+<input type="number" formControlName="dni"><br>
+<label for="velocidad">NOMBRE: </label>
+<input type="string" formControlName="nombre"><br>
+<label for="platos">DURACION: </label>
+<input type="number" formControlName="horas"><br>
+
+
+<button type="submit">Enviar</button> </form>
+</ng-template>
